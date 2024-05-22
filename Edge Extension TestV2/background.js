@@ -17,9 +17,15 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
 
 
 // What to do if request action is open_new_tab
+//chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+//    if (request.action === "open_new_tab2") {
+//        // Open a new tab
+//        chrome.tabs.create({url: 'https://www.bing.com'});
+//    }
+//});
+
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.action === "open_new_tab") {
-        // Open a new tab
-        chrome.tabs.create({url: 'https://www.bing.com'});
+        chrome.tabs.create({url: 'https://www.google.se/search?q=' + encodeURIComponent(request.selection)});
     }
 });
