@@ -5,7 +5,8 @@ document.addEventListener('keydown', function(e) {
 	
 	var selection = window.getSelection().toString();
 	
-	if (e.ctrlKey && e.shiftKey && e.key === 'E')
+	// if (e.ctrlKey && e.shiftKey && e.key === 'E')
+	if (e.ctrlKey && e.key === 'q')
 	{
 		chrome.runtime.sendMessage({action: "open_new_tab", selection: selection});
 	}
